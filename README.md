@@ -6,9 +6,23 @@
 
 Requirements: Python 3.9, Poetry
 
-1. Copy `.env.example` to `.env` and change the defaults
-2. Run `poetry install` to install dependencies
-3. Run `poetry run python zalgobot/main.py` to start the bot
+```sh
+# Create a Discord bot with the following permissions:
+# - Manage Nicknames
+# - Send Messages
+
+# Clone the repository
+git clone https://github.com/averycrespi/zalgobot.git && cd zalgobot
+
+# Configure environment variables
+cp .env.example .env
+
+# Install dependencies
+poetry install
+
+# Start the bot
+poetry run python zalgobot/main.py
+```
 
 ## License
 
