@@ -27,10 +27,12 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return  # Prevent infinite loops
-    elif has_mentions(message):
-        await message.channel.send(zalgofier.zalgofy(random.choice(EASTER_EGGS)))
-    elif message.content.startswith(COMMAND_PREFIX):
-        await handle_command(message.channel, message.author, message.content)
+
+    if message.content.startswith(COMMAND_PREFIX):
+        if has_mentions(message):
+            await message.channel.send(zalgofier.zalgofy(random.choice(EASTER_EGGS)))
+        else:
+            await handle_command(message.channel, message.author, message.content)
 
 
 def has_mentions(message):
